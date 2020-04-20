@@ -1,0 +1,219 @@
+/**
+  *  1 - HTML UTILITIES 
+  *  2 - JS UTILITIES 
+  *  3 - VIEWPORT UTILITIES 
+  *  4 - FLEXBOX UTILITIES 
+  *  5 - BORDER UTILITIES
+  *  6 - BUTTON UTILITIES
+  **/
+
+/* =======================================
+          JS UTILITIES
+==========================================*/
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+/* =======================================
+          HTML UTILITIES
+==========================================*/
+
+.container {
+  max-width: 134rem;
+  width: calc(100vw - 10rem);
+  margin: 0 auto;
+}
+
+/* =======================================
+          VIEWPORT UTILITIES
+==========================================*/
+
+%100vw {
+  width: 101vw;
+}
+
+/* =======================================
+          FLEXBOX UTILITIES
+==========================================*/
+
+%flex-jus-center {
+  display: flex;
+  justify-content: center;
+}
+
+%flex-jus-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+%flex-jus-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%flex-jus-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+%flex-jus-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* =======================================
+          BORDER UTILITIES
+==========================================*/
+
+// Create a border
+%brdr {
+  border: solid 1px;
+}
+
+%brdr-top {
+  border-top: solid 1px;
+}
+%brdr-bottom {
+  border-bottom: solid 1px;
+}
+%brdr-y {
+  border: 1px solid;
+}
+
+%brdr-right {
+  border-right: solid 1px;
+}
+%brdr-left {
+  border-left: solid 1px;
+}
+%brdr-x {
+  border-right: solid 1px;
+  border-left: solid 1px;
+}
+
+// Delete a border
+%brdr-0 {
+  border: 0;
+}
+
+%brdr-top-0 {
+  border-top: 0;
+}
+%brdr-bottom-0 {
+  border-bottom: 0;
+}
+%brdr-y {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+%brdr-right-0 {
+  border-right: 0;
+}
+%brdr-left-0 {
+  border-left: 0;
+}
+%brdr-x-0 {
+  border-right: 0;
+  border-left: 0;
+}
+
+// Adding corners to the buttons
+%rounded {
+  border-radius: 10px;
+}
+
+%rounded-0 {
+  border-radius: 0;
+}
+
+%rounded-circle {
+  border-radius: 50%;
+}
+
+// Adding border color
+%brdr-pri {
+  border-color: var(--clr-pri);
+}
+
+%brdr-sec {
+  border-color: var(--clr-sec);
+}
+
+%brdr-black {
+  border-color: var(--bkg-black);
+}
+
+%brdr-white {
+  border-color: var(--bkg-white);
+}
+
+%brdr-grey-light {
+  border-color: lightgrey;
+}
+
+%brdr-grey-dark {
+  border-color: darkgrey;
+}
+
+/* =======================================
+          BUTTON UTILITIES
+==========================================*/
+
+// Default btn style
+%btn {
+  text-decoration: none;
+  font-family: var(--default-font);
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  @extend %rounded;
+  text-transform: uppercase;
+}
+
+// Btn size
+%btn-sm {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+}
+
+%btn-md {
+  padding: 2rem;
+  // font-size: var(--h4-font);
+  font-size: 2rem;
+  @include respond(tab-port) {
+    // font-size: var(--h3-font);
+    width: 25rem;
+    height: 9rem;
+    line-height: 9rem;
+    padding: 0;
+  }
+}
+
+%btn-lg {
+  // font-size: var(--h3-font);
+  font-size: 2.1rem;
+  width: 25rem;
+  height: 7rem;
+  line-height: 7rem;
+  @include respond(phone) {
+    line-height: 9rem;
+  }
+}
+
+// Btn color
+%btn-trans {
+  background-color: var(--clr-trans);
+}
+
+%btn-sec {
+  color: var(--tx-white);
+  background-color: var(--clr-sec);
+}
+
+%btn-pri {
+  color: var(--tx-white);
+  background-color: var(--clr-pri);
+}

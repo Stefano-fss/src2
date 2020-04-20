@@ -1,0 +1,21 @@
+/* =======================================
+          NAVBAR DROPDOWN EFFECT
+==========================================*/
+
+.navbar-dropdown {
+  @include dropdown-effect;
+  animation: keyframe-dropdown 1s;
+  background-color: var(--navbar-grey);
+  box-shadow: var(--shadow);
+  transition: all 1s;
+  z-index: $--z-navbar-dropdown;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  @include respond(phone) {
+    animation: keyframe-dropdown 500ms;
+    transition: all 500ms;
+  }
+}

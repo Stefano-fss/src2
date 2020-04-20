@@ -1,0 +1,107 @@
+/**
+  *  1 - HEADER SIZING
+  *  2 - HEADER ALIGNMENT
+  *  3 - CLIPPER & SCROLL BTN
+  **/
+
+/* ============================
+          HEADER SIZING
+===============================*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-pri);
+  height: 100vh;
+
+  @include respond(tab-land) {
+    height: 95vh;
+  }
+  @include respond(tab-port) {
+    height: 85rem;
+  }
+  @media (max-width: 47.95em) {
+    height: 60vh;
+  }
+  @include respond(phone) {
+    height: 100vh;
+  }
+
+  /* ============================
+          HEADER ALIGNMENT
+===============================*/
+
+  &__parent {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 47.95em) {
+      flex-direction: column;
+    }
+
+    .header__main {
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      grid-template-columns: repeat(2, max-content);
+
+      @include respond(phone) {
+        grid-template-columns: repeat(2, minmax(23rem, 1fr));
+        grid-template-rows: repeat(2, min-content) repeat(1, 9rem);
+        justify-items: center;
+      }
+      @media (max-width: 23.4em) {
+        grid-template-columns: repeat(2, minmax(20rem, 1fr));
+      }
+    }
+    .header__img {
+      width: 50rem;
+      min-width: 50rem;
+      @media (max-width: 47.95em) {
+        display: none;
+      }
+    }
+  }
+
+  /* ============================
+      CLIPPER & SCROLL BTN
+===============================*/
+
+  &__clipper {
+    @extend %100vw;
+    fill: var(--clr-pri--light);
+    @include respond(tab-port) {
+      transform: translateY(0.2rem);
+    }
+  }
+
+  .scroll--top {
+    background: lighten($--clr-black, 17%);
+    position: fixed;
+    bottom: 16px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    z-index: $--z-scroll-top;
+
+    &.active {
+      bottom: 32px;
+      outline: none;
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    .up-arrow {
+      width: 2.5rem;
+    }
+  }
+}

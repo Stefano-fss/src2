@@ -1,0 +1,227 @@
+/**
+  *  1 - JS ROW ALIGNMENT
+  *  2 - PANEL ALIGNMENT & SIZING
+  *  3 - INDIVUAL PANEL FORMATING
+  *  4 - JS FLICKITY SLIDE
+  *  5 - JS FLICKITY CARDS
+  *  5 - JS FLICKITY ICONS
+  **/
+
+/* ============================
+      JS ROW ALIGNMENT
+===============================*/
+
+.panel__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 50rem;
+
+  @include respond(tab-land) {
+    margin-bottom: 40rem;
+  }
+
+  @include respond(tab-port) {
+    margin-top: 20rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+/* ============================
+    PANEL ALIGNMENT & SIZING
+===============================*/
+
+.explainer__panel {
+  flex-basis: 24%;
+  height: 100%;
+  margin-top: 25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-port) {
+    flex-basis: 45%;
+    max-width: 38rem;
+    margin-top: 9.4rem;
+  }
+
+  .explainer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 9rem 1rem 5rem 1rem;
+    @include respond(tab-land) {
+      padding: 7rem 1rem 3rem 1rem;
+    }
+  }
+}
+
+/* ============================
+    INDIVUAL PANEL FORMATING
+===============================*/
+
+.panel--1,
+.panel--3 {
+  @extend %brdr;
+  color: var(--tx-black);
+  border-radius: 20px 20px 20px 0px;
+  border-color: #595959;
+  background-color: var(--bkg-white);
+  transform: translatey(13.5rem);
+  @include respond(tab-port) {
+    transform: translateY(0);
+  }
+  // @extend %brdr-white;
+}
+
+.panel--1 {
+  @include respond(tab-port) {
+    margin-bottom: 16rem;
+  }
+  @include respond(phone) {
+    margin-bottom: 0;
+  }
+}
+
+.panel--2,
+.panel--4 {
+  @extend %brdr;
+  color: var(--tx-white);
+  border-radius: 20px 20px 0px 20px;
+  border-color: #595959;
+  background-color: lighten($--clr-pri, 2%);
+  @include respond(tab-port) {
+    transform: translateY(12.5rem);
+  }
+  // @extend %brdr-pri;
+
+  @include respond(phone) {
+    color: var(--tx-black);
+    transform: translateY(0);
+  }
+}
+
+.explainer__icon--1,
+.explainer__icon--3,
+.explainer__icon--2,
+.explainer__icon--4 {
+  height: 17rem;
+  position: absolute;
+  top: -12rem;
+  @include respond(tab-land) {
+    top: -13rem;
+  }
+}
+
+/* ============================
+      JS FLICKITY SLIDE
+===============================*/
+
+/* enable Flickity by default */
+.slide:after {
+  content: "flickity";
+  display: none; /* hide :after */
+}
+
+@media screen and (min-width: 601px) {
+  /* disable Flickity for large devices */
+  .slide:after {
+    content: "";
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  // hieght of the box surronding the card
+  .flickity-viewport {
+    height: 500px !important;
+  }
+
+  .slide {
+    background: transparent;
+    height: 100%;
+  } //height of grey
+
+  .flickity-enabled.is-draggable {
+    // margin-top: 6rem;
+  }
+  .flickity-prev-next-button {
+    z-index: $--z-flickity-arrows;
+  }
+
+  .flickity-button {
+    color: var(--clr-pri) !important;
+    background-color: transparent !important;
+  }
+
+  .flickity-button:focus {
+    box-shadow: 0 0 0 5px transparent;
+    outline: none;
+  }
+  .flickity-prev-next-button .flickity-button-icon {
+    width: 90%;
+    height: 90%;
+  }
+
+  .flickity-prev-next-button.next {
+    right: -35px;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: -45px;
+  }
+
+  .flickity-page-dots .dot {
+    background: var(--clr-pri) !important;
+  }
+
+  /* ============================
+        JS FLICKITY CARDS
+===============================*/
+
+  //height moving the green and the view point of the panels
+  .explainer__panel {
+    border: solid 1px #595959;
+    width: 90%;
+    height: 400px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: var(--bkg-white);
+    counter-increment: slide-cell;
+    align-items: baseline;
+    padding-top: 135px;
+    .explainer__content {
+      transform: translate(0);
+      padding-top: 40px;
+
+      .explainer__title {
+        margin: 10px 0;
+        padding: 0;
+        color: var(--clr-pri) !important;
+      }
+
+      .explainer__text {
+        width: 100%;
+      }
+
+      /* ============================
+      JS FLICKITY ICONS
+===============================*/
+
+      .explainer__icon--1 {
+        width: 45%;
+      }
+      .explainer__icon--2 {
+        width: 45%;
+      }
+      .explainer__icon--3 {
+        width: 45%;
+      }
+      .explainer__icon--4 {
+        width: 45%;
+      }
+    }
+  }
+}

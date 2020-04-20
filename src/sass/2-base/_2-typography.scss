@@ -1,0 +1,268 @@
+/**
+*  1 - TEXT UTILITIES 
+*  2 - BASE TEXT
+*  3 - HEADER TEXT
+*  4 - ABOUT US TEXT
+*  5 - HOW IT WORKS (LEARN MORE) TEXT
+*  6 - PANEL TEXT
+*  7 - FEATURES TEXT
+*  8 - CLR STRIP TEXT
+**/
+
+/** 
+===============================
+      TEXT UTILITIES
+===============================
+**/
+
+.section__title {
+  @extend %h2-text;
+  &--special {
+    color: var(--clr-pri);
+  }
+}
+
+%link {
+  text-decoration: none;
+  color: currentColor;
+}
+
+%h1-text {
+  font-size: var(--h1-font);
+  line-height: 9rem;
+}
+
+%h2-text {
+  font-size: var(--h2-font);
+  font-weight: bold;
+  @include respond(phone) {
+    text-align: center;
+    line-height: 6rem;
+  }
+}
+
+%h2-text-special {
+  color: var(--clr-pri);
+  text-decoration: none;
+}
+
+%h3-text {
+  font-size: var(--h3-font);
+}
+
+%h4-text {
+  font-size: var(--h4-font);
+}
+
+/* 
+========================
+        BASE TEXT
+=======================
+ */
+
+:root {
+  @include respond(tab-land) {
+    --default-font-size: 2rem;
+    --default-line-height: 2.56rem;
+    --h4-font: 2rem;
+  }
+
+  @include respond(tab-port) {
+    --h4-font: 2.4rem;
+    --default-line-height: 3rem;
+  }
+  @include respond(phone) {
+    --h1-font: 5.4rem;
+    --h2-font: 3.6rem;
+  }
+  @media (max-width: 23.4em) {
+    --h1-font: 4.6rem;
+    --h3-font: 2.6rem;
+  }
+}
+
+body {
+  font-family: var(--default-font);
+  color: var(--tx-black);
+  padding: 0rem;
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height);
+}
+
+/* 
+=========================================
+        HEADER TEXT
+========================================
+ */
+
+.header__headline {
+  @extend %h1-text;
+  color: var(--tx-white);
+  grid-column: 1/-1;
+
+  @include respond(tab-port) {
+    line-height: 7rem;
+  }
+  @media (max-width: 47.95em) {
+    text-align: center;
+  }
+}
+.header__subtitle {
+  @extend %h3-text;
+  color: var(--tx-white);
+  font-weight: 300;
+  grid-column: 1/-1;
+  margin: 1.5rem 0 3.5rem 0;
+
+  @media (max-width: 47.95em) {
+    text-align: center;
+  }
+  @include respond(phone) {
+    margin: 1rem 0 0 0;
+    line-height: 4.2rem;
+  }
+}
+
+// Headers subtitle
+.line-break--1 {
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+/* 
+=========================================
+        ABOUT US TEXT
+========================================
+ */
+
+.section-about__title {
+  margin-bottom: 1rem;
+  text-align: left;
+  line-height: 5.6rem;
+  @include respond(tab-port) {
+    position: absolute;
+    top: 7.5rem;
+    text-align: center;
+  }
+  .line-break--2 {
+    display: block;
+    @include respond(tab-port) {
+      display: unset;
+    }
+  }
+}
+
+.section-about__text {
+  text-align: justify;
+  margin-bottom: 4rem;
+  @include respond(tab-port) {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 48ch;
+  }
+}
+
+/* 
+=========================================
+    HOW IT WORKS (LEARN MORE) TEXT
+========================================
+ */
+
+//  might delete. I'm not showing it
+.section__subtitle {
+  @extend %h4-text;
+  text-decoration: none;
+  margin: 3rem 0 15rem 0;
+  display: inline-block;
+  display: none;
+  @include respond(phone) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 3.6rem;
+    height: 0.4rem;
+    background-color: var(--clr-pri);
+    margin-right: 1rem;
+    position: relative;
+    top: -0.38rem;
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    &::before {
+      width: 5rem;
+      transition: all 0.5s;
+    }
+  }
+}
+
+/* 
+=========================================
+        PANEL TEXT
+========================================
+ */
+
+.explainer__title {
+  @extend %h4-text;
+  // font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  @include respond(tab-land) {
+    padding: 0 0.7rem;
+  }
+}
+
+// Don't Know if I will keep
+.explainer__title--1,
+.explainer__title--3 {
+  color: var(--clr-sec) !important;
+}
+
+.explainer__text {
+  text-align: center;
+}
+
+/* 
+=========================================
+        FEATURES TEXT
+========================================
+ */
+
+.section-features__title {
+  text-align: center;
+  margin-bottom: 9rem;
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+/* 
+=========================================
+        CLR STRIP TEXT
+========================================
+ */
+
+.clr-strip__text {
+  @extend %h3-text;
+  text-align: center;
+  color: var(--tx-white);
+  padding: 0rem 4rem;
+
+  @media (max-width: 23.4em) {
+    padding: 0rem 1rem;
+  }
+}
+
+.line-break--3 {
+  @include respond(tab-port) {
+    display: block;
+    line-height: 3.36rem;
+  }
+}

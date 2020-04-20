@@ -1,0 +1,1594 @@
+.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-button{position:absolute;background:hsla(0,0%,100%,.75);border:none;color:#333}.flickity-button:hover{background:#fff;cursor:pointer}.flickity-button:focus{outline:0;box-shadow:0 0 0 5px #19F}.flickity-button:active{opacity:.6}.flickity-button:disabled{opacity:.3;cursor:auto;pointer-events:none}.flickity-button-icon{fill:currentColor}.flickity-prev-next-button{top:50%;width:44px;height:44px;border-radius:50%;transform:translateY(-50%)}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button .flickity-button-icon{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}
+/* line 2, sass/1-tools/_1-variables.scss */
+:root {
+  --default-font: "Montserrat", sans-serif;
+  --default-font-size: 1.8rem;
+  --h1-font: 7rem;
+  --h2-font: 4rem;
+  --h3-font: 2.8rem;
+  --h4-font: 2.2rem;
+  --default-line-height: 2.7rem;
+  --bkg-white: #ffffff;
+  --tx-white: #ffffff;
+  --bkg-black: black;
+  --tx-black: black;
+  --clr-pri: #e85718;
+  --clr-pri--light: #fcede6;
+  --clr-sec: #009c93;
+  --clr-trans: transparent;
+  --clr-ter--dark: #4d4d4d;
+  --clr-ter--light: #eee;
+  --navbar-grey: #fcfcfc;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --card-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+
+/**
+  *  1 - MEDIA QUERY MANAGER 
+  *  2 - NAVBAR DROPDOWN FAD
+  *  3 - BTN GLOSS HOVER
+  *  3 - SQUARE BTN HOVER
+  **/
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > each section + grid > page layout > components
+
+Must use em for media queries 
+1em = 16px
+*/
+/* 
+=========================================
+        NAVBAR DROPDOWN FADE
+========================================
+ */
+/* 
+=========================================
+        BTN GLOSS HOVER
+========================================
+ */
+/* 
+=========================================
+        SQUARE BTN HOVER
+========================================
+ */
+/* line 1, sass/2-base/_1-base.scss */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* line 9, sass/2-base/_1-base.scss */
+html {
+  overflow-x: hidden;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    /* line 9, sass/2-base/_1-base.scss */
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    /* line 9, sass/2-base/_1-base.scss */
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    /* line 9, sass/2-base/_1-base.scss */
+    html {
+      font-size: 65%; } }
+
+/* line 29, sass/2-base/_1-base.scss */
+body {
+  box-sizing: border-box;
+  overflow-x: hidden; }
+
+/* line 34, sass/2-base/_1-base.scss */
+.site {
+  overflow-x: hidden; }
+
+/**
+*  1 - TEXT UTILITIES 
+*  2 - BASE TEXT
+*  3 - HEADER TEXT
+*  4 - ABOUT US TEXT
+*  5 - HOW IT WORKS (LEARN MORE) TEXT
+*  6 - PANEL TEXT
+*  7 - FEATURES TEXT
+*  8 - CLR STRIP TEXT
+**/
+/** 
+===============================
+      TEXT UTILITIES
+===============================
+**/
+/* line 20, sass/2-base/_2-typography.scss */
+.section__title--special {
+  color: var(--clr-pri); }
+
+/* line 25, sass/2-base/_2-typography.scss */
+.footer__content .footer__list-group .footer__list-item .footer__list-link {
+  text-decoration: none;
+  color: currentColor; }
+
+/* line 30, sass/2-base/_2-typography.scss */
+.header__headline {
+  font-size: var(--h1-font);
+  line-height: 9rem; }
+
+/* line 35, sass/2-base/_2-typography.scss */
+.section__title {
+  font-size: var(--h2-font);
+  font-weight: bold; }
+  @media only screen and (max-width: 37.5em) {
+    /* line 35, sass/2-base/_2-typography.scss */
+    .section__title {
+      text-align: center;
+      line-height: 6rem; } }
+
+/* line 49, sass/2-base/_2-typography.scss */
+.header__subtitle, .clr-strip__text, .card__header {
+  font-size: var(--h3-font); }
+
+/* line 53, sass/2-base/_2-typography.scss */
+.section__subtitle, .explainer__title, .card__body .card__subtitle {
+  font-size: var(--h4-font); }
+
+/* 
+========================
+        BASE TEXT
+=======================
+ */
+@media only screen and (max-width: 75em) {
+  /* line 63, sass/2-base/_2-typography.scss */
+  :root {
+    --default-font-size: 2rem;
+    --default-line-height: 2.56rem;
+    --h4-font: 2rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  /* line 63, sass/2-base/_2-typography.scss */
+  :root {
+    --h4-font: 2.4rem;
+    --default-line-height: 3rem; } }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 63, sass/2-base/_2-typography.scss */
+  :root {
+    --h1-font: 5.4rem;
+    --h2-font: 3.6rem; } }
+
+@media (max-width: 23.4em) {
+  /* line 63, sass/2-base/_2-typography.scss */
+  :root {
+    --h1-font: 4.6rem;
+    --h3-font: 2.6rem; } }
+
+/* line 84, sass/2-base/_2-typography.scss */
+body {
+  font-family: var(--default-font);
+  color: var(--tx-black);
+  padding: 0rem;
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height); }
+
+/* 
+=========================================
+        HEADER TEXT
+========================================
+ */
+/* line 98, sass/2-base/_2-typography.scss */
+.header__headline {
+  color: var(--tx-white);
+  grid-column: 1/-1; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 98, sass/2-base/_2-typography.scss */
+    .header__headline {
+      line-height: 7rem; } }
+  @media (max-width: 47.95em) {
+    /* line 98, sass/2-base/_2-typography.scss */
+    .header__headline {
+      text-align: center; } }
+
+/* line 110, sass/2-base/_2-typography.scss */
+.header__subtitle {
+  color: var(--tx-white);
+  font-weight: 300;
+  grid-column: 1/-1;
+  margin: 1.5rem 0 3.5rem 0; }
+  @media (max-width: 47.95em) {
+    /* line 110, sass/2-base/_2-typography.scss */
+    .header__subtitle {
+      text-align: center; } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 110, sass/2-base/_2-typography.scss */
+    .header__subtitle {
+      margin: 1rem 0 0 0;
+      line-height: 4.2rem; } }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 127, sass/2-base/_2-typography.scss */
+  .line-break--1 {
+    display: block; } }
+
+/* 
+=========================================
+        ABOUT US TEXT
+========================================
+ */
+/* line 139, sass/2-base/_2-typography.scss */
+.section-about__title {
+  margin-bottom: 1rem;
+  text-align: left;
+  line-height: 5.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 139, sass/2-base/_2-typography.scss */
+    .section-about__title {
+      position: absolute;
+      top: 7.5rem;
+      text-align: center; } }
+  /* line 148, sass/2-base/_2-typography.scss */
+  .section-about__title .line-break--2 {
+    display: block; }
+    @media only screen and (max-width: 56.25em) {
+      /* line 148, sass/2-base/_2-typography.scss */
+      .section-about__title .line-break--2 {
+        display: unset; } }
+
+/* line 156, sass/2-base/_2-typography.scss */
+.section-about__text {
+  text-align: justify;
+  margin-bottom: 4rem; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 156, sass/2-base/_2-typography.scss */
+    .section-about__text {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 48ch; } }
+
+/* 
+=========================================
+    HOW IT WORKS (LEARN MORE) TEXT
+========================================
+ */
+/* line 173, sass/2-base/_2-typography.scss */
+.section__subtitle {
+  text-decoration: none;
+  margin: 3rem 0 15rem 0;
+  display: inline-block;
+  display: none; }
+  @media only screen and (max-width: 37.5em) {
+    /* line 173, sass/2-base/_2-typography.scss */
+    .section__subtitle {
+      display: none; } }
+  /* line 183, sass/2-base/_2-typography.scss */
+  .section__subtitle::before {
+    content: "";
+    display: inline-block;
+    width: 3.6rem;
+    height: 0.4rem;
+    background-color: var(--clr-pri);
+    margin-right: 1rem;
+    position: relative;
+    top: -0.38rem;
+    transition: all 0.5s; }
+  /* line 196, sass/2-base/_2-typography.scss */
+  .section__subtitle:hover::before {
+    width: 5rem;
+    transition: all 0.5s; }
+
+/* 
+=========================================
+        PANEL TEXT
+========================================
+ */
+/* line 209, sass/2-base/_2-typography.scss */
+.explainer__title {
+  text-align: center;
+  margin-bottom: 1rem; }
+  @media only screen and (max-width: 75em) {
+    /* line 209, sass/2-base/_2-typography.scss */
+    .explainer__title {
+      padding: 0 0.7rem; } }
+
+/* line 220, sass/2-base/_2-typography.scss */
+.explainer__title--1,
+.explainer__title--3 {
+  color: var(--clr-sec) !important; }
+
+/* line 225, sass/2-base/_2-typography.scss */
+.explainer__text {
+  text-align: center; }
+
+/* 
+=========================================
+        FEATURES TEXT
+========================================
+ */
+/* line 235, sass/2-base/_2-typography.scss */
+.section-features__title {
+  text-align: center;
+  margin-bottom: 9rem; }
+  @media only screen and (max-width: 37.5em) {
+    /* line 235, sass/2-base/_2-typography.scss */
+    .section-features__title {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 2rem;
+      margin-bottom: 5rem; } }
+
+/* 
+=========================================
+        CLR STRIP TEXT
+========================================
+ */
+/* line 252, sass/2-base/_2-typography.scss */
+.clr-strip__text {
+  text-align: center;
+  color: var(--tx-white);
+  padding: 0rem 4rem; }
+  @media (max-width: 23.4em) {
+    /* line 252, sass/2-base/_2-typography.scss */
+    .clr-strip__text {
+      padding: 0rem 1rem; } }
+
+@media only screen and (max-width: 56.25em) {
+  /* line 263, sass/2-base/_2-typography.scss */
+  .line-break--3 {
+    display: block;
+    line-height: 3.36rem; } }
+
+/**
+  *  1 - HTML UTILITIES 
+  *  2 - JS UTILITIES 
+  *  3 - VIEWPORT UTILITIES 
+  *  4 - FLEXBOX UTILITIES 
+  *  5 - BORDER UTILITIES
+  *  6 - BUTTON UTILITIES
+  **/
+/* =======================================
+          JS UTILITIES
+==========================================*/
+/* line 14, sass/2-base/_3-utilities.scss */
+.invisible {
+  opacity: 0;
+  pointer-events: none; }
+
+/* =======================================
+          HTML UTILITIES
+==========================================*/
+/* line 22, sass/2-base/_3-utilities.scss */
+.container {
+  max-width: 134rem;
+  width: calc(100vw - 10rem);
+  margin: 0 auto; }
+
+/* =======================================
+          VIEWPORT UTILITIES
+==========================================*/
+/* line 32, sass/2-base/_3-utilities.scss */
+.header__clipper, .section-about__clipper, .section-features__clipper {
+  width: 101vw; }
+
+/* =======================================
+          FLEXBOX UTILITIES
+==========================================*/
+/* line 40, sass/2-base/_3-utilities.scss */
+.section-features .clr-strip__btn-group, .navbar__btn, .header__btn, .section-about__btn, .clr-strip__btn, .card__header {
+  display: flex;
+  justify-content: center; }
+
+/* line 45, sass/2-base/_3-utilities.scss */
+.section-features .section-features__main {
+  display: flex;
+  justify-content: space-around; }
+
+/* line 50, sass/2-base/_3-utilities.scss */
+.navbar-animation, .footer__content .footer__list-group {
+  display: flex;
+  justify-content: space-between; }
+
+/* =======================================
+          BORDER UTILITIES
+==========================================*/
+/* line 70, sass/2-base/_3-utilities.scss */
+.navbar__group .navbar--collapse, .navbar__btn--1, .navbar__btn--2, .header__btn--1, .header__btn--2, .section-about__btn, .clr-strip__btn--1, .clr-strip__btn--2, .panel--1,
+.panel--3, .panel--2,
+.panel--4 {
+  border: solid 1px; }
+
+/* line 74, sass/2-base/_3-utilities.scss */
+.footer__content .footer__list-group, .footer__copyright {
+  border-top: solid 1px; }
+
+/* line 77, sass/2-base/_3-utilities.scss */
+.card__btn {
+  border-bottom: solid 1px; }
+
+/* line 123, sass/2-base/_3-utilities.scss */
+.navbar__btn, .header__btn, .section-about__btn, .card__btn, .clr-strip__btn {
+  border-radius: 10px; }
+
+/* line 127, sass/2-base/_3-utilities.scss */
+.card__btn {
+  border-radius: 0; }
+
+/* line 136, sass/2-base/_3-utilities.scss */
+.navbar__btn--1, .section-about__btn, .card__btn {
+  border-color: var(--clr-pri); }
+
+/* line 140, sass/2-base/_3-utilities.scss */
+.navbar__btn--2, .header__btn--1, .clr-strip__btn--1 {
+  border-color: var(--clr-sec); }
+
+/* line 148, sass/2-base/_3-utilities.scss */
+.header__btn--2, .clr-strip__btn--2 {
+  border-color: var(--bkg-white); }
+
+/* line 152, sass/2-base/_3-utilities.scss */
+.navbar__group .navbar--collapse {
+  border-color: lightgrey; }
+
+/* line 156, sass/2-base/_3-utilities.scss */
+.footer__content .footer__list-group, .footer__copyright {
+  border-color: darkgrey; }
+
+/* =======================================
+          BUTTON UTILITIES
+==========================================*/
+/* line 165, sass/2-base/_3-utilities.scss */
+.navbar__btn, .header__btn, .section-about__btn, .card__btn, .clr-strip__btn {
+  text-decoration: none;
+  font-family: var(--default-font);
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase; }
+
+/* line 177, sass/2-base/_3-utilities.scss */
+.navbar__btn {
+  padding: 1rem 2rem;
+  font-size: 1.6rem; }
+
+/* line 182, sass/2-base/_3-utilities.scss */
+.section-about__btn {
+  padding: 2rem;
+  font-size: 2rem; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 182, sass/2-base/_3-utilities.scss */
+    .section-about__btn {
+      width: 25rem;
+      height: 9rem;
+      line-height: 9rem;
+      padding: 0; } }
+
+/* line 195, sass/2-base/_3-utilities.scss */
+.header__btn, .clr-strip__btn {
+  font-size: 2.1rem;
+  width: 25rem;
+  height: 7rem;
+  line-height: 7rem; }
+  @media only screen and (max-width: 37.5em) {
+    /* line 195, sass/2-base/_3-utilities.scss */
+    .header__btn, .clr-strip__btn {
+      line-height: 9rem; } }
+
+/* line 207, sass/2-base/_3-utilities.scss */
+.header__btn--2, .clr-strip__btn--2 {
+  background-color: var(--clr-trans); }
+
+/* line 211, sass/2-base/_3-utilities.scss */
+.navbar__btn--2, .header__btn--1, .clr-strip__btn--1 {
+  color: var(--tx-white);
+  background-color: var(--clr-sec); }
+
+/* line 216, sass/2-base/_3-utilities.scss */
+.navbar__btn--1, .section-about__btn {
+  color: var(--tx-white);
+  background-color: var(--clr-pri); }
+
+/* =======================================
+          NAVBAR DROPDOWN EFFECT
+==========================================*/
+/* line 5, sass/2-base/_4-animations.scss */
+.navbar-dropdown {
+  animation: keyframe-dropdown 1s;
+  background-color: var(--navbar-grey);
+  box-shadow: var(--shadow);
+  transition: all 1s;
+  z-index: 9999;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0; }
+
+@keyframes keyframe-dropdown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 5, sass/2-base/_4-animations.scss */
+    .navbar-dropdown {
+      animation: keyframe-dropdown 500ms;
+      transition: all 500ms; } }
+
+/**
+  *  1 - NAVBAR SIZING
+  *  2 - JS LOGO
+  *  3 - COLLAPSED LIST ITEMS
+  **/
+/* ============================
+          NAVBAR SIZING
+===============================*/
+/* line 11, sass/3-layout/_1-navigation.scss */
+.navbar {
+  position: absolute;
+  width: 100%;
+  /* ============================
+            JS LOGO
+===============================*/ }
+  /* line 15, sass/3-layout/_1-navigation.scss */
+  .navbar-animation {
+    align-items: flex-end;
+    padding: 1.6rem 3rem;
+    transition: 600ms all; }
+    @media only screen and (max-width: 37.5em) {
+      /* line 15, sass/3-layout/_1-navigation.scss */
+      .navbar-animation {
+        padding: 1.6rem 2rem; } }
+  /* line 30, sass/3-layout/_1-navigation.scss */
+  .navbar__logo--icon {
+    width: 4.6rem; }
+  /* line 34, sass/3-layout/_1-navigation.scss */
+  .navbar__logo--name {
+    width: 15rem; }
+  /* line 38, sass/3-layout/_1-navigation.scss */
+  .navbar__group {
+    display: flex;
+    align-items: center;
+    /* ============================
+            JS LOGO
+===============================*/ }
+    /* line 46, sass/3-layout/_1-navigation.scss */
+    .navbar__group .toggle-btn {
+      display: none;
+      cursor: pointer; }
+      /* line 50, sass/3-layout/_1-navigation.scss */
+      .navbar__group .toggle-btn .icon--menu-hamburger {
+        width: 2.8rem;
+        cursor: pointer;
+        color: var(--clr-ter--dark);
+        position: relative;
+        display: none; }
+        @media only screen and (max-width: 56.25em) {
+          /* line 50, sass/3-layout/_1-navigation.scss */
+          .navbar__group .toggle-btn .icon--menu-hamburger {
+            display: unset; } }
+    /* line 62, sass/3-layout/_1-navigation.scss */
+    .navbar__group .toggle-btn-visible {
+      display: block; }
+    /* line 66, sass/3-layout/_1-navigation.scss */
+    .navbar__group .toggle-target-hidden {
+      display: none; }
+    /* line 70, sass/3-layout/_1-navigation.scss */
+    .navbar__group .toggle-target-expanded {
+      display: block; }
+    /* line 74, sass/3-layout/_1-navigation.scss */
+    .navbar__group .navbar--collapse {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+      width: 100%; }
+      /* line 84, sass/3-layout/_1-navigation.scss */
+      .navbar__group .navbar--collapse .navbar__list-group {
+        list-style: none;
+        height: calc(100% + 3rem); }
+        /* line 88, sass/3-layout/_1-navigation.scss */
+        .navbar__group .navbar--collapse .navbar__list-group:last-child {
+          padding-bottom: 20rem; }
+          @media (min-width: 56.26em) {
+            /* line 88, sass/3-layout/_1-navigation.scss */
+            .navbar__group .navbar--collapse .navbar__list-group:last-child {
+              padding-bottom: 0; } }
+        /* line 96, sass/3-layout/_1-navigation.scss */
+        .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items {
+          text-align: center;
+          text-decoration: none;
+          color: #979797; }
+          @media (min-width: 56.26em) {
+            /* line 96, sass/3-layout/_1-navigation.scss */
+            .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items {
+              display: none; } }
+          /* line 105, sass/3-layout/_1-navigation.scss */
+          .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items:active {
+            color: var(--tx-white);
+            background-color: var(--clr-pri); }
+          /* line 110, sass/3-layout/_1-navigation.scss */
+          .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items:active .navbar__row {
+            border-color: transparent; }
+          /* line 114, sass/3-layout/_1-navigation.scss */
+          .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__row {
+            border-color: #979797;
+            opacity: 0.3;
+            width: 85%;
+            text-align: center;
+            margin: 0 auto; }
+          /* line 122, sass/3-layout/_1-navigation.scss */
+          .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:link,
+          .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:visited {
+            color: currentColor;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0rem; }
+            /* line 135, sass/3-layout/_1-navigation.scss */
+            .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:link .navbar__link-items,
+            .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:visited .navbar__link-items {
+              display: grid;
+              grid-template-columns: max-content 21.25rem;
+              align-items: center;
+              justify-items: center;
+              position: relative;
+              justify-content: center;
+              margin: auto;
+              padding: 2rem 0; }
+              /* line 145, sass/3-layout/_1-navigation.scss */
+              .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:link .navbar__link-items .navbar__icon,
+              .navbar__group .navbar--collapse .navbar__list-group .navbar__list-items .navbar__list-links:visited .navbar__link-items .navbar__icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 2rem;
+                fill: currentColor;
+                grid-column: 1/2;
+                justify-self: flex-end; }
+
+/**
+  *  1 - HEADER SIZING
+  *  2 - HEADER ALIGNMENT
+  *  3 - CLIPPER & SCROLL BTN
+  **/
+/* ============================
+          HEADER SIZING
+===============================*/
+/* line 11, sass/3-layout/_2-header.scss */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-pri);
+  height: 100vh;
+  /* ============================
+          HEADER ALIGNMENT
+===============================*/
+  /* ============================
+      CLIPPER & SCROLL BTN
+===============================*/ }
+  @media only screen and (max-width: 75em) {
+    /* line 11, sass/3-layout/_2-header.scss */
+    .header {
+      height: 95vh; } }
+  @media only screen and (max-width: 56.25em) {
+    /* line 11, sass/3-layout/_2-header.scss */
+    .header {
+      height: 85rem; } }
+  @media (max-width: 47.95em) {
+    /* line 11, sass/3-layout/_2-header.scss */
+    .header {
+      height: 60vh; } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 11, sass/3-layout/_2-header.scss */
+    .header {
+      height: 100vh; } }
+  /* line 35, sass/3-layout/_2-header.scss */
+  .header__parent {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media (max-width: 47.95em) {
+      /* line 35, sass/3-layout/_2-header.scss */
+      .header__parent {
+        flex-direction: column; } }
+    /* line 45, sass/3-layout/_2-header.scss */
+    .header__parent .header__main {
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      grid-template-columns: repeat(2, max-content); }
+      @media only screen and (max-width: 37.5em) {
+        /* line 45, sass/3-layout/_2-header.scss */
+        .header__parent .header__main {
+          grid-template-columns: repeat(2, minmax(23rem, 1fr));
+          grid-template-rows: repeat(2, min-content) repeat(1, 9rem);
+          justify-items: center; } }
+      @media (max-width: 23.4em) {
+        /* line 45, sass/3-layout/_2-header.scss */
+        .header__parent .header__main {
+          grid-template-columns: repeat(2, minmax(20rem, 1fr)); } }
+    /* line 59, sass/3-layout/_2-header.scss */
+    .header__parent .header__img {
+      width: 50rem;
+      min-width: 50rem; }
+      @media (max-width: 47.95em) {
+        /* line 59, sass/3-layout/_2-header.scss */
+        .header__parent .header__img {
+          display: none; } }
+  /* line 72, sass/3-layout/_2-header.scss */
+  .header__clipper {
+    fill: var(--clr-pri--light); }
+    @media only screen and (max-width: 56.25em) {
+      /* line 72, sass/3-layout/_2-header.scss */
+      .header__clipper {
+        transform: translateY(0.2rem); } }
+  /* line 80, sass/3-layout/_2-header.scss */
+  .header .scroll--top {
+    background: #2b2b2b;
+    position: fixed;
+    bottom: 16px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    z-index: 9001; }
+    /* line 96, sass/3-layout/_2-header.scss */
+    .header .scroll--top.active {
+      bottom: 32px;
+      outline: none;
+      pointer-events: auto;
+      opacity: 1; }
+    /* line 103, sass/3-layout/_2-header.scss */
+    .header .scroll--top .up-arrow {
+      width: 2.5rem; }
+
+/**
+  *  1 - ABOUT US SIZING & ALIGNMENT 
+  *  2 - IMAGE SIZING
+  **/
+/* ============================
+    ABOUT US SIZING & ALIGNMENT
+===============================*/
+/* line 10, sass/3-layout/_3-about-us.scss */
+.section-about {
+  background-color: var(--clr-pri--light);
+  display: flex;
+  flex-direction: column; }
+  /* line 15, sass/3-layout/_3-about-us.scss */
+  .section-about__parent {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 15rem;
+    /* ============================
+          IMAGE SIZING
+===============================*/ }
+    @media only screen and (max-width: 56.25em) {
+      /* line 15, sass/3-layout/_3-about-us.scss */
+      .section-about__parent {
+        flex-direction: column;
+        align-items: center;
+        position: relative; } }
+    /* line 29, sass/3-layout/_3-about-us.scss */
+    .section-about__parent .section-about__main {
+      display: grid;
+      grid-template-rows: repeat(3, max-content);
+      grid-template-columns: repeat(1, minmax(40rem, 55rem));
+      grid-row-gap: 0rem; }
+      @media only screen and (max-width: 56.25em) {
+        /* line 29, sass/3-layout/_3-about-us.scss */
+        .section-about__parent .section-about__main {
+          display: contents;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          order: 2; } }
+    /* line 47, sass/3-layout/_3-about-us.scss */
+    .section-about__parent .section-about__img--parent {
+      max-width: 60rem;
+      margin-right: 5rem; }
+      @media only screen and (max-width: 56.25em) {
+        /* line 47, sass/3-layout/_3-about-us.scss */
+        .section-about__parent .section-about__img--parent {
+          margin: 11.25rem 0 3.125rem 0; } }
+      @media only screen and (max-width: 37.5em) {
+        /* line 47, sass/3-layout/_3-about-us.scss */
+        .section-about__parent .section-about__img--parent {
+          max-width: 40rem; } }
+      @media (max-width: 23.4em) {
+        /* line 47, sass/3-layout/_3-about-us.scss */
+        .section-about__parent .section-about__img--parent {
+          margin: 16rem 0 3.125rem 0; } }
+      /* line 61, sass/3-layout/_3-about-us.scss */
+      .section-about__parent .section-about__img--parent .section-about__img--child {
+        width: 100%; }
+        @media only screen and (max-width: 56.25em) {
+          /* line 61, sass/3-layout/_3-about-us.scss */
+          .section-about__parent .section-about__img--parent .section-about__img--child {
+            margin: 0 0 0 0; } }
+  /* line 70, sass/3-layout/_3-about-us.scss */
+  .section-about__clipper {
+    fill: white; }
+    @media only screen and (max-width: 56.25em) {
+      /* line 70, sass/3-layout/_3-about-us.scss */
+      .section-about__clipper {
+        transform: translateY(0.2rem); } }
+
+/**
+  *  1 - HOW IT WORKS SIZING  
+  *  2 - MOBILE IMG POSTIONING
+  **/
+/* ============================
+    HOW IT WORKS SIZING 
+===============================*/
+/* line 10, sass/3-layout/_4-how-it-works.scss */
+.section-explainer {
+  background: var(--bkg-white);
+  margin-bottom: 25rem;
+  padding-top: 10rem;
+  /* ============================
+    MOBILE IMG POSTIONING
+===============================*/ }
+  @media (max-width: 23.4em) {
+    /* line 10, sass/3-layout/_4-how-it-works.scss */
+    .section-explainer {
+      height: 100%; } }
+  /* line 25, sass/3-layout/_4-how-it-works.scss */
+  .section-explainer .section-explainer__img {
+    position: relative; }
+    /* line 28, sass/3-layout/_4-how-it-works.scss */
+    .section-explainer .section-explainer__img--1 {
+      width: 100%;
+      transform: scale(1.5); }
+      @media only screen and (min-width: 112.5em) {
+        /* line 28, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--1 {
+          transform: scale(1.65);
+          max-width: 2500px; } }
+      @media (max-width: 43.75em) {
+        /* line 28, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--1 {
+          transform: scale(1.75); } }
+      @media only screen and (max-width: 37.5em) {
+        /* line 28, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--1 {
+          display: none; } }
+      @media (max-width: 23.4em) {
+        /* line 28, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--1 {
+          display: none; } }
+    /* line 54, sass/3-layout/_4-how-it-works.scss */
+    .section-explainer .section-explainer__img--2 {
+      display: none; }
+      @media only screen and (max-width: 37.5em) {
+        /* line 54, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--2 {
+          display: none; } }
+      @media (max-width: 23.4em) {
+        /* line 54, sass/3-layout/_4-how-it-works.scss */
+        .section-explainer .section-explainer__img--2 {
+          display: none; } }
+
+/**
+  *  1 - HOW IT WORKS SIZING  
+  *  2 - MOBILE IMG POSTIONING
+  **/
+/* ============================
+    FEATURES ALIGNMENT 
+===============================*/
+/* line 10, sass/3-layout/_5-features.scss */
+.section-features {
+  background: var(--clr-pri--light);
+  /* ============================
+          CLR STRIP 
+===============================*/ }
+  /* line 13, sass/3-layout/_5-features.scss */
+  .section-features__clipper {
+    transform: rotate(180deg);
+    fill: var(--bkg-white);
+    padding-top: 10rem; }
+  @media only screen and (max-width: 75em) {
+    /* line 20, sass/3-layout/_5-features.scss */
+    .section-features .section-features__main {
+      justify-content: space-around; } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 20, sass/3-layout/_5-features.scss */
+    .section-features .section-features__main {
+      flex-direction: column;
+      align-items: center; } }
+  /* line 36, sass/3-layout/_5-features.scss */
+  .section-features .clr-strip {
+    background-color: var(--clr-pri);
+    padding: 4rem 0rem; }
+  /* line 44, sass/3-layout/_5-features.scss */
+  .section-features__main {
+    margin-bottom: 15rem; }
+    @media only screen and (max-width: 37.5em) {
+      /* line 44, sass/3-layout/_5-features.scss */
+      .section-features__main {
+        margin-bottom: 0rem; } }
+
+/**
+  *  1 - FOOTER ALIGNMENT  
+  *  2 - LIST ITEMS
+  *  2 - LOGO AND COPYRIGHT 
+  **/
+/* ============================
+    FOOTER ALIGNMENT 
+===============================*/
+/* line 11, sass/3-layout/_6-footer.scss */
+.footer {
+  background-color: var(--clr-ter--dark);
+  /* ============================
+    LOGO AND COPYRIGHT 
+===============================*/ }
+  /* line 14, sass/3-layout/_6-footer.scss */
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-template-rows: repeat(2, min-content);
+    justify-content: space-between;
+    padding: 10rem 0;
+    /* ============================
+        LIST ITEMS 
+===============================*/ }
+    @media only screen and (max-width: 75em) {
+      /* line 14, sass/3-layout/_6-footer.scss */
+      .footer__content {
+        grid-template-columns: repeat(2, 0.1fr); } }
+    @media only screen and (max-width: 56.25em) {
+      /* line 14, sass/3-layout/_6-footer.scss */
+      .footer__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
+    /* line 30, sass/3-layout/_6-footer.scss */
+    .footer__content .footer__links {
+      grid-column: 1/2;
+      grid-row: 2/3; }
+      @media only screen and (max-width: 56.25em) {
+        /* line 30, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__links {
+          width: 50%; } }
+      @media only screen and (max-width: 37.5em) {
+        /* line 30, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__links {
+          width: 70%; } }
+    /* line 45, sass/3-layout/_6-footer.scss */
+    .footer__content .footer__list-group {
+      list-style: none;
+      padding-top: 1rem;
+      width: 70rem; }
+      @media only screen and (max-width: 75em) {
+        /* line 45, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__list-group {
+          width: 100%;
+          text-align: center; } }
+      @media only screen and (max-width: 56.25em) {
+        /* line 45, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__list-group {
+          display: flex;
+          flex-direction: column;
+          text-align: center; } }
+      /* line 64, sass/3-layout/_6-footer.scss */
+      .footer__content .footer__list-group .footer__list-item {
+        color: var(--tx-white); }
+        /* line 66, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__list-group .footer__list-item:not(:last-child) {
+          margin-right: 5rem; }
+          @media only screen and (max-width: 56.25em) {
+            /* line 66, sass/3-layout/_6-footer.scss */
+            .footer__content .footer__list-group .footer__list-item:not(:last-child) {
+              margin: 3rem 0 0 0; } }
+        @media only screen and (max-width: 56.25em) {
+          /* line 74, sass/3-layout/_6-footer.scss */
+          .footer__content .footer__list-group .footer__list-item:last-child {
+            margin: 3rem 0 6rem 0; } }
+        /* line 79, sass/3-layout/_6-footer.scss */
+        .footer__content .footer__list-group .footer__list-item:hover {
+          color: var(--clr-pri); }
+          @media only screen and (max-width: 56.25em) {
+            /* line 79, sass/3-layout/_6-footer.scss */
+            .footer__content .footer__list-group .footer__list-item:hover {
+              color: var(--tx-white); } }
+  /* line 96, sass/3-layout/_6-footer.scss */
+  .footer__logo--name {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    width: 27rem;
+    padding-bottom: 1rem; }
+  /* line 103, sass/3-layout/_6-footer.scss */
+  .footer__copyright {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    padding-top: 1rem;
+    color: var(--tx-white); }
+    @media only screen and (max-width: 75em) {
+      /* line 103, sass/3-layout/_6-footer.scss */
+      .footer__copyright {
+        text-align: right; } }
+    @media only screen and (max-width: 56.25em) {
+      /* line 103, sass/3-layout/_6-footer.scss */
+      .footer__copyright {
+        text-align: center;
+        width: 50%; } }
+    @media only screen and (max-width: 37.5em) {
+      /* line 103, sass/3-layout/_6-footer.scss */
+      .footer__copyright {
+        width: 80%; } }
+  /* line 123, sass/3-layout/_6-footer.scss */
+  .footer__creator {
+    display: inline-block;
+    padding: 0 1px 0 1px;
+    transition: all 0.4s; }
+    /* line 128, sass/3-layout/_6-footer.scss */
+    .footer__creator:hover, .footer__creator:focus {
+      background-color: var(--clr-ter--dark);
+      transform: rotate(15deg) scale(1.3);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      transition: all 0.2s;
+      color: #55c57a;
+      transition: all 0.2s; }
+      @media only screen and (max-width: 56.25em) {
+        /* line 128, sass/3-layout/_6-footer.scss */
+        .footer__creator:hover, .footer__creator:focus {
+          background-color: var(--clr-ter--dark);
+          transform: rotate(0deg) scale(1);
+          box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0);
+          transition: all 0;
+          color: var(--tx-white);
+          transition: all 0; } }
+
+/**
+  *  1 - NAVIGATION BTN
+  *  2 - HEADER BTN
+  *  3 - ABOUT US BTN
+  *  4 - CARD BTN
+  *  5 - CLR STRIP BTN
+  **/
+/* ============================
+    NAVIGATION BTN 
+===============================*/
+/* line 80, sass/1-tools/_2-mixins.scss */
+.navbar__btn::after {
+  background: var(--bkg-white);
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 5ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 30; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 80, sass/1-tools/_2-mixins.scss */
+    .navbar__btn::after {
+      width: 0;
+      height: 0; } }
+
+/* line 97, sass/1-tools/_2-mixins.scss */
+.navbar__btn:hover::after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+@media only screen and (max-width: 56.25em) {
+  /* line 13, sass/4-modules/_1-button.scss */
+  .navbar__btn {
+    display: none; } }
+
+/* line 22, sass/4-modules/_1-button.scss */
+.navbar__btn--1 {
+  color: var(--tx-white);
+  margin-right: 2rem; }
+
+/* ============================
+          HEADER BTN 
+===============================*/
+/* line 80, sass/1-tools/_2-mixins.scss */
+.header__btn::after {
+  background: var(--bkg-white);
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 5ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 30; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 80, sass/1-tools/_2-mixins.scss */
+    .header__btn::after {
+      width: 0;
+      height: 0; } }
+
+/* line 97, sass/1-tools/_2-mixins.scss */
+.header__btn:hover::after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 41, sass/4-modules/_1-button.scss */
+  .header__btn {
+    width: 80%;
+    height: 100%;
+    margin-top: 25px; } }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 53, sass/4-modules/_1-button.scss */
+  .header__btn--1 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-top: 25px;
+    justify-self: end;
+    margin-right: 1.2rem; } }
+
+/* line 67, sass/4-modules/_1-button.scss */
+.header__btn--2 {
+  color: var(--tx-white); }
+  @media only screen and (max-width: 37.5em) {
+    /* line 67, sass/4-modules/_1-button.scss */
+    .header__btn--2 {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      justify-self: start;
+      margin-left: 1.2rem; } }
+
+/* ============================
+        ABOUT US BTN 
+===============================*/
+/* line 86, sass/4-modules/_1-button.scss */
+.section-about__btn {
+  justify-self: flex-start; }
+  /* line 80, sass/1-tools/_2-mixins.scss */
+  .section-about__btn::after {
+    background: var(--bkg-white);
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 5ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: 30; }
+    @media only screen and (max-width: 56.25em) {
+      /* line 80, sass/1-tools/_2-mixins.scss */
+      .section-about__btn::after {
+        width: 0;
+        height: 0; } }
+  /* line 97, sass/1-tools/_2-mixins.scss */
+  .section-about__btn:hover::after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 56.25em) {
+    /* line 86, sass/4-modules/_1-button.scss */
+    .section-about__btn {
+      margin-top: 2.5rem; } }
+
+/* ============================
+          CARD BTN 
+===============================*/
+/* line 104, sass/4-modules/_1-button.scss */
+.card__btn {
+  text-transform: initial;
+  color: var(--clr-pri);
+  padding: 5px 5px;
+  transition: all 0.3s;
+  grid-column: 2/3; }
+  /* line 110, sass/1-tools/_2-mixins.scss */
+  .card__btn:hover,
+  .card__btn :focus {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    transition: all 0.3s;
+    background-color: var(--clr-pri);
+    color: var(--tx-white); }
+    @media only screen and (max-width: 56.25em) {
+      /* line 110, sass/1-tools/_2-mixins.scss */
+      .card__btn:hover,
+      .card__btn :focus {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        transform: translateY(0px);
+        transition: none;
+        background-color: white;
+        color: var(--clr-pri);
+        border-bottom: solid 1px var(--clr-pri); } }
+  /* line 128, sass/1-tools/_2-mixins.scss */
+  .card__btn:active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transform: translateY(0); }
+    @media only screen and (max-width: 56.25em) {
+      /* line 128, sass/1-tools/_2-mixins.scss */
+      .card__btn:active {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0); } }
+  @media only screen and (max-width: 56.25em) {
+    /* line 104, sass/4-modules/_1-button.scss */
+    .card__btn {
+      background-color: var(--bkg-white);
+      color: var(--clr-pri);
+      transition: none; } }
+  /* line 123, sass/4-modules/_1-button.scss */
+  .card__btn--1 {
+    width: 18rem; }
+    @media only screen and (max-width: 75em) {
+      /* line 123, sass/4-modules/_1-button.scss */
+      .card__btn--1 {
+        width: 20rem; } }
+  /* line 130, sass/4-modules/_1-button.scss */
+  .card__btn--2 {
+    width: 15rem; }
+    @media only screen and (max-width: 75em) {
+      /* line 130, sass/4-modules/_1-button.scss */
+      .card__btn--2 {
+        width: 16rem; } }
+
+/* ============================
+        CLR STRIP BTN 
+===============================*/
+/* line 142, sass/4-modules/_1-button.scss */
+.clr-strip__btn {
+  margin: 3rem; }
+  /* line 80, sass/1-tools/_2-mixins.scss */
+  .clr-strip__btn::after {
+    background: var(--bkg-white);
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 5ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: 30; }
+    @media only screen and (max-width: 56.25em) {
+      /* line 80, sass/1-tools/_2-mixins.scss */
+      .clr-strip__btn::after {
+        width: 0;
+        height: 0; } }
+  /* line 97, sass/1-tools/_2-mixins.scss */
+  .clr-strip__btn:hover::after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 37.5em) {
+    /* line 142, sass/4-modules/_1-button.scss */
+    .clr-strip__btn {
+      line-height: 7rem;
+      margin: 3rem 1.3rem 0rem 1.3rem; } }
+  /* line 161, sass/4-modules/_1-button.scss */
+  .clr-strip__btn--2 {
+    color: var(--tx-white); }
+
+/**
+  *  1 - JS ROW ALIGNMENT
+  *  2 - PANEL ALIGNMENT & SIZING
+  *  3 - INDIVUAL PANEL FORMATING
+  *  4 - JS FLICKITY SLIDE
+  *  5 - JS FLICKITY CARDS
+  *  5 - JS FLICKITY ICONS
+  **/
+/* ============================
+      JS ROW ALIGNMENT
+===============================*/
+/* line 14, sass/4-modules/_2-panel.scss */
+.panel__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 50rem; }
+  @media only screen and (max-width: 75em) {
+    /* line 14, sass/4-modules/_2-panel.scss */
+    .panel__row {
+      margin-bottom: 40rem; } }
+  @media only screen and (max-width: 56.25em) {
+    /* line 14, sass/4-modules/_2-panel.scss */
+    .panel__row {
+      margin-top: 20rem;
+      flex-wrap: wrap;
+      justify-content: space-around; } }
+
+/* ============================
+    PANEL ALIGNMENT & SIZING
+===============================*/
+/* line 35, sass/4-modules/_2-panel.scss */
+.explainer__panel {
+  flex-basis: 24%;
+  height: 100%;
+  margin-top: 25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 35, sass/4-modules/_2-panel.scss */
+    .explainer__panel {
+      flex-basis: 45%;
+      max-width: 38rem;
+      margin-top: 9.4rem; } }
+  /* line 49, sass/4-modules/_2-panel.scss */
+  .explainer__panel .explainer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 9rem 1rem 5rem 1rem; }
+    @media only screen and (max-width: 75em) {
+      /* line 49, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content {
+        padding: 7rem 1rem 3rem 1rem; } }
+
+/* ============================
+    INDIVUAL PANEL FORMATING
+===============================*/
+/* line 66, sass/4-modules/_2-panel.scss */
+.panel--1,
+.panel--3 {
+  color: var(--tx-black);
+  border-radius: 20px 20px 20px 0px;
+  border-color: #595959;
+  background-color: var(--bkg-white);
+  transform: translatey(13.5rem); }
+  @media only screen and (max-width: 56.25em) {
+    /* line 66, sass/4-modules/_2-panel.scss */
+    .panel--1,
+    .panel--3 {
+      transform: translateY(0); } }
+
+@media only screen and (max-width: 56.25em) {
+  /* line 80, sass/4-modules/_2-panel.scss */
+  .panel--1 {
+    margin-bottom: 16rem; } }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 80, sass/4-modules/_2-panel.scss */
+  .panel--1 {
+    margin-bottom: 0; } }
+
+/* line 89, sass/4-modules/_2-panel.scss */
+.panel--2,
+.panel--4 {
+  color: var(--tx-white);
+  border-radius: 20px 20px 0px 20px;
+  border-color: #595959;
+  background-color: #e95e21; }
+  @media only screen and (max-width: 56.25em) {
+    /* line 89, sass/4-modules/_2-panel.scss */
+    .panel--2,
+    .panel--4 {
+      transform: translateY(12.5rem); } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 89, sass/4-modules/_2-panel.scss */
+    .panel--2,
+    .panel--4 {
+      color: var(--tx-black);
+      transform: translateY(0); } }
+
+/* line 107, sass/4-modules/_2-panel.scss */
+.explainer__icon--1,
+.explainer__icon--3,
+.explainer__icon--2,
+.explainer__icon--4 {
+  height: 17rem;
+  position: absolute;
+  top: -12rem; }
+  @media only screen and (max-width: 75em) {
+    /* line 107, sass/4-modules/_2-panel.scss */
+    .explainer__icon--1,
+    .explainer__icon--3,
+    .explainer__icon--2,
+    .explainer__icon--4 {
+      top: -13rem; } }
+
+/* ============================
+      JS FLICKITY SLIDE
+===============================*/
+/* enable Flickity by default */
+/* line 124, sass/4-modules/_2-panel.scss */
+.slide:after {
+  content: "flickity";
+  display: none;
+  /* hide :after */ }
+
+@media screen and (min-width: 601px) {
+  /* disable Flickity for large devices */
+  /* line 131, sass/4-modules/_2-panel.scss */
+  .slide:after {
+    content: ""; } }
+
+@media only screen and (max-width: 37.5em) {
+  /* line 138, sass/4-modules/_2-panel.scss */
+  .flickity-viewport {
+    height: 500px !important; }
+  /* line 142, sass/4-modules/_2-panel.scss */
+  .slide {
+    background: transparent;
+    height: 100%; }
+  /* line 150, sass/4-modules/_2-panel.scss */
+  .flickity-prev-next-button {
+    z-index: 100; }
+  /* line 154, sass/4-modules/_2-panel.scss */
+  .flickity-button {
+    color: var(--clr-pri) !important;
+    background-color: transparent !important; }
+  /* line 159, sass/4-modules/_2-panel.scss */
+  .flickity-button:focus {
+    box-shadow: 0 0 0 5px transparent;
+    outline: none; }
+  /* line 163, sass/4-modules/_2-panel.scss */
+  .flickity-prev-next-button .flickity-button-icon {
+    width: 90%;
+    height: 90%; }
+  /* line 168, sass/4-modules/_2-panel.scss */
+  .flickity-prev-next-button.next {
+    right: -35px; }
+  /* line 172, sass/4-modules/_2-panel.scss */
+  .flickity-prev-next-button.previous {
+    left: -45px; }
+  /* line 176, sass/4-modules/_2-panel.scss */
+  .flickity-page-dots .dot {
+    background: var(--clr-pri) !important; }
+  /* ============================
+        JS FLICKITY CARDS
+===============================*/
+  /* line 185, sass/4-modules/_2-panel.scss */
+  .explainer__panel {
+    border: solid 1px #595959;
+    width: 90%;
+    height: 400px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: var(--bkg-white);
+    counter-increment: slide-cell;
+    align-items: baseline;
+    padding-top: 135px; }
+    /* line 195, sass/4-modules/_2-panel.scss */
+    .explainer__panel .explainer__content {
+      transform: translate(0);
+      padding-top: 40px;
+      /* ============================
+      JS FLICKITY ICONS
+===============================*/ }
+      /* line 199, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__title {
+        margin: 10px 0;
+        padding: 0;
+        color: var(--clr-pri) !important; }
+      /* line 205, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__text {
+        width: 100%; }
+      /* line 213, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__icon--1 {
+        width: 45%; }
+      /* line 216, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__icon--2 {
+        width: 45%; }
+      /* line 219, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__icon--3 {
+        width: 45%; }
+      /* line 222, sass/4-modules/_2-panel.scss */
+      .explainer__panel .explainer__content .explainer__icon--4 {
+        width: 45%; } }
+
+/**
+  *  1 - OVERALL CARD
+  *  2 - INSIDE CARD
+  **/
+/* ============================
+      OVERALL CARD
+===============================*/
+/* line 10, sass/4-modules/_3-card.scss */
+.card {
+  width: 50rem;
+  height: 66rem;
+  background-color: var(--bkg-white);
+  box-shadow: var(--card-shadow);
+  /* ============================
+      INSIDE CARD
+===============================*/ }
+  @media only screen and (max-width: 75em) {
+    /* line 10, sass/4-modules/_3-card.scss */
+    .card {
+      height: 73rem;
+      margin: 0 1.5rem;
+      width: 45rem; } }
+  @media only screen and (max-width: 56.25em) {
+    /* line 10, sass/4-modules/_3-card.scss */
+    .card {
+      width: 48%;
+      height: 100%;
+      margin: 0; } }
+  @media only screen and (max-width: 37.5em) {
+    /* line 10, sass/4-modules/_3-card.scss */
+    .card {
+      margin-bottom: 12rem;
+      width: 86%; } }
+  /* line 30, sass/4-modules/_3-card.scss */
+  .card__header {
+    padding: 2.5rem;
+    background-color: var(--clr-pri);
+    color: var(--tx-white); }
+  /* line 42, sass/4-modules/_3-card.scss */
+  .card__body {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(24rem, 40rem);
+    grid-template-rows: repeat(8, max-content) 4rem;
+    justify-content: start;
+    align-items: center;
+    margin-top: 2rem; }
+    @media only screen and (max-width: 75em) {
+      /* line 42, sass/4-modules/_3-card.scss */
+      .card__body {
+        grid-template-columns: 7.5rem minmax(24rem, 33.4rem); } }
+    @media only screen and (max-width: 56.25em) {
+      /* line 42, sass/4-modules/_3-card.scss */
+      .card__body {
+        grid-template-columns: 2.5rem minmax(24rem, 85%);
+        grid-template-rows: repeat(8, max-content) 5rem;
+        margin: 2rem 0rem 4.5rem 0rem; } }
+    /* line 58, sass/4-modules/_3-card.scss */
+    .card__body .card__subtitle {
+      grid-column: 2/3;
+      margin-bottom: 1rem; }
+    /* line 64, sass/4-modules/_3-card.scss */
+    .card__body .card__description {
+      margin-bottom: 3rem;
+      grid-column: 2/3; }
+    /* line 69, sass/4-modules/_3-card.scss */
+    .card__body .checkmark {
+      width: 3rem;
+      margin: 0 2rem;
+      justify-self: end; }
+      @media only screen and (max-width: 56.25em) {
+        /* line 69, sass/4-modules/_3-card.scss */
+        .card__body .checkmark {
+          display: none; } }
+      /* line 77, sass/4-modules/_3-card.scss */
+      .card__body .checkmark--1 {
+        grid-column: 1/2;
+        grid-row: 1/2; }
+      /* line 81, sass/4-modules/_3-card.scss */
+      .card__body .checkmark--2 {
+        grid-column: 1/2;
+        grid-row: 3/4; }
+      /* line 85, sass/4-modules/_3-card.scss */
+      .card__body .checkmark--3 {
+        grid-column: 1/2;
+        grid-row: 5/6; }
+      /* line 89, sass/4-modules/_3-card.scss */
+      .card__body .checkmark--4 {
+        grid-column: 1/2;
+        grid-row: 7/8; }
+
+/*# sourceMappingURL=style.map.css/style.css.map */

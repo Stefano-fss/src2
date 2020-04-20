@@ -1,0 +1,167 @@
+/**
+  *  1 - NAVIGATION BTN
+  *  2 - HEADER BTN
+  *  3 - ABOUT US BTN
+  *  4 - CARD BTN
+  *  5 - CLR STRIP BTN
+  **/
+
+/* ============================
+    NAVIGATION BTN 
+===============================*/
+
+.navbar__btn {
+  @extend %btn;
+  @extend %btn-sm;
+  @extend %flex-jus-center;
+  @include hover-gloss;
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  &--1 {
+    @extend %brdr;
+    @extend %brdr-pri;
+    @extend %btn-pri;
+    color: var(--tx-white);
+    margin-right: 2rem;
+  }
+
+  &--2 {
+    @extend %btn-sec;
+    @extend %brdr;
+    @extend %brdr-sec;
+  }
+}
+
+/* ============================
+          HEADER BTN 
+===============================*/
+
+.header__btn {
+  @extend %btn;
+  @extend %btn-lg;
+  @extend %flex-jus-center;
+  @include hover-gloss;
+
+  @include respond(phone) {
+    width: 80%;
+    height: 100%;
+    margin-top: 25px;
+  }
+
+  &--1 {
+    @extend %btn-sec;
+    @extend %brdr;
+    @extend %brdr-sec;
+
+    @include respond(phone) {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin-top: 25px;
+      justify-self: end;
+      margin-right: 1.2rem;
+    }
+  }
+
+  &--2 {
+    @extend %brdr;
+    @extend %brdr-white;
+    @extend %btn-trans;
+    color: var(--tx-white);
+
+    @include respond(phone) {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      justify-self: start;
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+/* ============================
+        ABOUT US BTN 
+===============================*/
+
+.section-about__btn {
+  @extend %btn;
+  @extend %btn-md;
+  @extend %btn-pri;
+  @extend %brdr;
+  @extend %brdr-pri;
+  @extend %flex-jus-center;
+  @include hover-gloss;
+  justify-self: flex-start;
+  @include respond(tab-port) {
+    margin-top: 2.5rem;
+  }
+}
+
+/* ============================
+          CARD BTN 
+===============================*/
+
+.card__btn {
+  @extend %btn;
+  @extend %brdr-bottom;
+  @extend %brdr-pri;
+  @extend %rounded-0;
+  @include hover-float;
+  text-transform: initial;
+
+  color: var(--clr-pri);
+  padding: 5px 5px;
+  transition: all 0.3s;
+  grid-column: 2/3;
+
+  @include respond(tab-port) {
+    background-color: var(--bkg-white);
+    color: var(--clr-pri);
+    transition: none;
+  }
+
+  &--1 {
+    width: 18rem;
+    @include respond(tab-land) {
+      width: 20rem;
+    }
+  }
+
+  &--2 {
+    width: 15rem;
+    @include respond(tab-land) {
+      width: 16rem;
+    }
+  }
+}
+
+/* ============================
+        CLR STRIP BTN 
+===============================*/
+
+.clr-strip__btn {
+  @extend %btn;
+  @extend %btn-lg;
+  @extend %flex-jus-center;
+
+  @include hover-gloss;
+  margin: 3rem;
+
+  @include respond(phone) {
+    line-height: 7rem;
+    margin: 3rem 1.3rem 0rem 1.3rem;
+  }
+
+  &--1 {
+    @extend %btn-sec;
+    @extend %brdr;
+    @extend %brdr-sec;
+  }
+
+  &--2 {
+    @extend %brdr;
+    @extend %brdr-white;
+    @extend %btn-trans;
+    color: var(--tx-white);
+  }
+}

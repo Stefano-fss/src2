@@ -1,0 +1,41 @@
+// CSS Variables
+:root {
+  //   =========== Fonts =================
+  --default-font: "Montserrat", sans-serif;
+  --default-font-size: 1.8rem;
+  --h1-font: 7rem;
+  --h2-font: 4rem;
+  --h3-font: 2.8rem;
+  --h4-font: 2.2rem;
+  --default-line-height: 2.7rem;
+
+  //   ========== Colors =================
+  --bkg-white: #ffffff;
+  --tx-white: #ffffff;
+  --bkg-black: black;
+  --tx-black: black;
+  --clr-pri: #e85718;
+  --clr-pri--light: #fcede6;
+  --clr-sec: #009c93;
+  --clr-trans: transparent;
+  --clr-ter--dark: #4d4d4d; //footer
+  --clr-ter--light: #eee; // How it works
+  --navbar-grey: #fcfcfc;
+
+  //  =========== Box Shadow ===============
+  // option 2: 0px 10px 15px rgba(0, 0, 0, 0.05)
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --card-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+// Hover & animation colors
+$--clr-pri: #e85718;
+$--clr-sec: #009c93;
+$--clr-black: #000000;
+$--navbar-grey: #fcfcfc;
+
+// Z-Index
+$--z-navbar-dropdown: 9999;
+$--z-scroll-top: 9001;
+$--z-flickity-arrows: 100;
+$--z-hover-gloss: 30;

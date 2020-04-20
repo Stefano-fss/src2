@@ -1,0 +1,71 @@
+/**
+  *  1 - HOW IT WORKS SIZING  
+  *  2 - MOBILE IMG POSTIONING
+  **/
+
+/* ============================
+    HOW IT WORKS SIZING 
+===============================*/
+
+.section-explainer {
+  background: var(--bkg-white);
+  margin-bottom: 25rem;
+  padding-top: 10rem;
+  @include respond(phone) {
+    // height: 1200px;
+  }
+  @media (max-width: 23.4em) {
+    height: 100%;
+  }
+
+  /* ============================
+    MOBILE IMG POSTIONING
+===============================*/
+
+  .section-explainer__img {
+    position: relative;
+
+    &--1 {
+      width: 100%;
+      transform: scale(1.5);
+
+      @include respond(xl-desk) {
+        transform: scale(1.65);
+        max-width: 2500px;
+      }
+      @media (max-width: 43.75em) {
+        transform: scale(1.75);
+      }
+
+      // removed don't know if i'll add back
+      @include respond(phone) {
+        // width: 16rem;
+        // position: absolute;
+        // top: 100px;
+        // left: -32px;
+        display: none;
+      }
+      @media (max-width: 23.4em) {
+        display: none;
+      }
+    }
+
+    // removed don't know if i'll add back
+    &--2 {
+      display: none;
+      @include respond(phone) {
+        // display: unset;
+        // position: absolute;
+        // top: 205px;
+        // right: -24px;
+        // width: 36rem;
+        // right: -67px;
+        // width: 44rem;
+        display: none;
+      }
+      @media (max-width: 23.4em) {
+        display: none;
+      }
+    }
+  }
+}
